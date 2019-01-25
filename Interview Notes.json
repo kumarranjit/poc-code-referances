@@ -1,0 +1,42 @@
+Typescript
+=============
+Typescript vs ECMAScript
+-------------------------
+TypeScript syntax is a superset of JavaScript(Ecmascript).
+
+TypeScript is just an extension of the standard ECMAScript 6 syntax
+
+TypeScript is very similar Flow, dart and coffeescript that focus on the same problem.
+
+TypeScript is a free and open-source programming language developed and maintained by Microsoft.
+
+ES6 is a version of ECMAScript (ES), which is a scripting language specification standardized by ECMA international.
+
+TypeScript supports all primitive data types ( String, Number, Boolean, Array, Enum, Tuple, generics) . 
+Major advantage of TypeScript is that it helps to build class-based objects.
+
+Both TypeScript and ES6 are supports Modules, Class, Blocked Scope, Template Literals, Generators, Optional Parameters , 
+Default Parameters, Rest Parameters, De-structuring Assignment, Symbols, Closure, decorators and Latest Iterators.
+
+TypeScript only support features are generics and type annotations, Interfaces, Enums, Readonly properties and Mixin
+
+Typescript is an extension of ES6. Some features that are additionally included in Typescript are:
+
+1. Type Annotations 
+	eg: name: String = ‘xyz’
+	number: Number = ‘123’;
+2. Interfaces
+3. Enums
+4. Mixins
+
+What does @Component decorator exactly do?
+---------------------------------------------
+Component decorator allows you to mark a class as an Angular component and provide additional metadata that determines how the component should be processed, 
+instantiated and used at runtime.
+
+var len=1000;
+var arr= new Array(1000);
+console.time("time1");
+for(var i=0; i<len; i++){
+console.log(arr[i]);}
+console.timeEnd("time1");

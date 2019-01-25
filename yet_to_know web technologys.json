@@ -1,0 +1,112 @@
+
+Want known the Web  technology’s
+
+1. Angular 6
+2. Node js
+3. RxJS
+4. Angular build processes
+5. webpack
+6. Hybrid Mobile App{Cordova setup, }
+7. React js
+8. vue js
+			
+						
+
+10 new sites and technologies you should know about! We look at GraphQL, Rxjs and more!	
+=========================================================================================					
+https://vuepress.vuejs.org/
+https://cmty.app/
+https://cmty.app/meta
+https://www.figma.com
+https://www.invisionapp.com/
+https://www.netlify.com/
+https://rxjs-dev.firebaseapp.com/api
+https://graphql.org/
+https://graphcms.com
+https://marketplace.visualstudio.com/...
+https://syntax.fm/
+
+Angular 6 yet to known topics
+=================================
+=> View Encapsulation
+=> pipe
+=> angular lazyloding
+=> angular routing concepts
+=> ECMAScript 2018 (ES2018), the ninth edition, includes features for asynchronous iteration and generators, 
+new regular expression features and rest/spread parameters.
+=> Dynamic components creation
+=> redux
+-> BehaviorSubject
+=> BehaviorSubject vs Observable? -- https://stackoverflow.com/questions/39494058/behaviorsubject-vs-observable, https://blog.angulartraining.com/rxjs-subjects-a-tutorial-4dcce0e9637f
+	https://blog.cloudboost.io/build-simple-shopping-cart-with-angular-4-observables-subject-subscription-part-2-2d3735cde5f
+=> karma is a test runner,jasmine is testing frame work for karma
+-> Understanding @ViewChildren, @ViewChild, @ContentChildren and @ContentChild
+
+Angular interview Questions
+1. angular style encapsulation
+2. why angular js developed as a SPA?
+3. angular pipe example, how to develope custome pipe
+4. what is typescript Enum, Rest Parameters?
+5. what are the datatypes available in typescript
+6. what difference between typescript and  ES6(ECMAScript 6, also known as ECMAScript 2015)
+7. what is mergeMap in RxJS?
+
+============================================
+1. what is decorators in angular?
+2. how compiler know the component file and module file?
+3. what is two-way property binding?
+4. where we store AUTH token
+5. different type of browser cache?
+6. Difference between nghide and ngif
+7. how many files we create in angular?
+8. which command we use to run project?
+9. What is an AsyncPipe in Angular?
+==========================================================================
+1. Explain Zone in Angular?
+2. Explain Ivy Renderer in Angular?
+3. What is Bazel and Closure Compiler in Angular6?
+4. Explain Service Worker in reference to Angular JS
+============================================================================
+
+components & Templates, services, Routing, HttpClient, Directives, Pipes, Rective Forms, Dependency Injection, 
+Component Interaction, Dynamic components, View Encapsulation, angular lazyloding
+
+
+ElementRef, TemplateRef, ViewRef, ComponentRef and ViewContainerRef
+
+	
+1. what is decorators in angular?
+--------------------------------
+Decorators are actually just functions, it’s as simple as that, and are called with whatever they are decorating. 
+A method decorator will be called with the value of the method it’s decorating, and a class decorator will be called with the class to be decorated.
+
+let’s look at the different types of decorators that Angular offers. There are four main types:
+
+* Class decorators, e.g. @Component and @NgModule
+* Property decorators for properties inside classes, e.g. @Input and @Output
+* Method decorators for methods inside classes, e.g. @HostListener
+* Parameter decorators for parameters inside class constructors, e.g. @Inject
+
+Below are the list of few Pipes available in Angular Js
+--------------------------------------------------------
+* DatePipe
+* CurrencyPipe
+* AsyncPipe
+* DecimalPipe
+* TitleCasePipe
+* JsonPipe
+* SlicePipe
+* PercentPipe
+* UpperCasePipe
+* LowerCasePipe
+
+What is difference between "declarations", "providers" and "import" in NgModule?
+-------------------------------------------------------------------------------------
+* imports makes the exported declarations of other modules available in the current module
+* declarations are to make directives (including components and pipes) from the current module available to other directives in the current module. 
+Selectors of directives, components or pipes are only matched against the HTML if they are declared or imported.
+* providers are to make services and values known to DI. They are added to the root scope and they are injected to other services or directives 
+that have them as dependency.
+
+* A special case for providers are lazy loaded modules that get their own child injector. providers of a lazy loaded module are only provided to 
+this lazy loaded module by default (not the whole application as it is with other modules).
