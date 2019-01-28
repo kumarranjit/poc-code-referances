@@ -498,6 +498,130 @@ function processUserInput(callback) {
   callback(name);
 }
 processUserInput(greeting);
+
+var persons = [
+  {id : 1, name : "John", tags : "javascript"}, 
+  {id : 2, name : "Alice", tags : "javascript"}, 
+  {id : 3, name : "Roger", tags : "java"},
+  {id : 4, name : "Adam", tags : "javascript"},
+  {id : 5, name : "Alex", tags : "java"}
+];
+
+function getPerson(){
+  setTimeout(() => {
+    let output='';
+    persons.forEach(element => {
+      output+=`<li>${element.name}</li>`
+    });
+    console.log(output);
+  }, 1000);
+}
+getPerson();
+
+function createPerson(val,callback) {
+setTimeout(() => {
+  persons.push(val);
+  callback();
+  }, 2000);
+}
+createPerson({id : 6, name : "Ranjit", tags : "Node"}, getPerson);
+
+================================================================================================================================================
+// Promise
+
+var persons = [
+  {id : 1, name : "John", tags : "javascript"}, 
+  {id : 2, name : "Alice", tags : "javascript"}, 
+  {id : 3, name : "Roger", tags : "java"},
+];
+
+function getPerson(){
+  setTimeout(() => {
+    let output='';
+    persons.forEach(element => {
+      output+=`<li>${element.name}</li>`
+    });
+    console.log(output);
+  }, 1000);
+}
+getPerson();
+
+
+function createPerson(val) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      persons.push(val);  
+      const error = false;
+      if(!error){
+        resolve('success');
+      } else {
+        reject ('failed');
+      }
+      }, 2000);
+  });
+  }
+  createPerson({id : 6, name : "Ranjit", tags : "Node"})
+  .then(getPerson)
+  .catch(err => console.log(err));
+
+
+  const Promise1 = Promise.resolve('Hello world');
+  const Promise2 = 10;
+  const Promise3 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('goodbye');
+  }, 2000);
+  });
+  const Promise4 = fetch('https://jsonplaceholder.typicode.com/users').then(res => res.json());
+  Promise.all([Promise1, Promise2, Promise3,Promise4]).then(val => console.log(val));
+
+  //Async / Await
+  async function asynFun(){
+    await createPerson({id : 6, name : "Ranjit", tags : "Node"});
+    getPerson();
+  }
+  asynFun();
+
+//Async / Await /Fetch
+  async function fetchUser() {
+    const res =  await fetch('https://jsonplaceholder.typicode.com/users');
+    const data = await res.json();
+    console.log(data);
+  }
+  fetchUser();
+
+=================================================================================================================================================
+Closure
+
+function create() {
+   var counter = 0;
+   return {
+      increment: function() {
+         counter++;
+      },
+  
+      print: function() {
+         console.log(counter);
+      }
+   }
+}
+var c = create();
+c.increment();
+c.print();
+===============================================================================================================================================
+prototype
+
+The prototype property allows you to add properties and methods to any object (Number, Boolean, String and Date etc.).
+
+Note - Prototype is a global property which is available with almost all the objects.
+
+function book(val1,val2){
+this.title=val2;
+this.author=val2;
+}
+var mybook = new book('some','name');
+book.prototype.price=null;
+console.log(mybook); 
 ===================================================================================================================================================
 Geolocation API
 -----------------
