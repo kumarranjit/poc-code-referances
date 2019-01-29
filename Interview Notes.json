@@ -40,3 +40,19 @@ console.time("time1");
 for(var i=0; i<len; i++){
 console.log(arr[i]);}
 console.timeEnd("time1");
+
+
+Html 5 Question;
+==================
+1. what is HTML5 Doctype? why should mention?
+2. HTML5 Feature?
+3. Difference between svg and canvas?
+
+CSS -3 Question;
+====================
+1. what are display properties? (none,inline, block, inline-block)
+2. what is difference inline and inline-block?
+3. CSS float Property? (none,left, right, initial, inherit)
+4. CSS position Property? position: static|absolute|fixed|relative|sticky|initial|inherit;
+5. CSS Box Model?
+6. What is  Pseudo-classes and Pseudo-element?Ex!
