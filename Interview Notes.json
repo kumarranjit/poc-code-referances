@@ -34,12 +34,6 @@ What does @Component decorator exactly do?
 Component decorator allows you to mark a class as an Angular component and provide additional metadata that determines how the component should be processed, 
 instantiated and used at runtime.
 
-var len=1000;
-var arr= new Array(1000);
-console.time("time1");
-for(var i=0; i<len; i++){
-console.log(arr[i]);}
-console.timeEnd("time1");
 
 
 Html 5 Question;
@@ -47,6 +41,11 @@ Html 5 Question;
 1. what is HTML5 Doctype? why should mention?
 2. HTML5 Feature?
 3. Difference between svg and canvas?
+
+1. diff b/w html4 and html5
+2. why do we need to use header tag in HTML
+3. what is the use of DOCTYPE in html 5
+4. semantic elements in HTML
 
 CSS -3 Question;
 ====================
@@ -56,3 +55,39 @@ CSS -3 Question;
 4. CSS position Property? position: static|absolute|fixed|relative|sticky|initial|inherit;
 5. CSS Box Model?
 6. What is  Pseudo-classes and Pseudo-element?Ex!
+
+1. css positions and diff
+2. opacity
+3. visiblity : hidden , dispaly none diff
+
+
+JS  Question;
+=================
+Find duplicate number in array?
+
+
+================================
+Angular interview Questions
+===========================
+1. angular style encapsulation
+2. why angular js developed as a SPA?
+3. angular pipe example, how to develope custome pipe
+4. what is typescript Enum, Rest Parameters?
+5. what are the datatypes available in typescript
+6. what difference between typescript and  ES6(ECMAScript 6, also known as ECMAScript 2015)
+7. what is mergeMap in RxJS?
+
+1. what is decorators in angular?
+2. how compiler know the component file and module file?
+3. what is two-way property binding?
+4. where we store AUTH token
+5. different type of browser cache?
+6. Difference between nghide and ngif
+7. how many files we create in angular?
+8. which command we use to run project?
+9. What is an AsyncPipe in Angular?
+
+1. Explain Zone in Angular?
+2. Explain Ivy Renderer in Angular?
+3. What is Bazel and Closure Compiler in Angular6?
+4. Explain Service Worker in reference to Angular JS

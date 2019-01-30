@@ -308,7 +308,9 @@ for (var counter=0; counter < numberArray.length; counter++){
    squareNumbers.push(numberArray[counter] * numberArray[counter])
 }
 console.log(squareNumbers);
+
 //forEach Version
+
 var squareNumbers1 = [];
 numberArray.forEach(number => {
     squareNumbers1.push(number*number);
@@ -339,14 +341,14 @@ var nameArray = persons.map(function(personObj){
 console.log(nameArray);
 
 ===========================================================================================================================================================
-Merge two objects (like multiple inheritance).
+//Merge two objects (like multiple inheritance).
 ---------------------------------------------
 var obj1 = { food: 'pizza', car: 'ford', animal: 'dog'}
 var obj2 = { animal: 'cat de' }
 console.log(Object.assign(obj1, obj2));
 output: {food: "pizza", car: "ford", animal: "cat de"}
 --------------------------------------------------------------------------------------------------
-Cloning an object
+//Cloning an object
 -------------------
 var copy = Object.assign({}, obj);
  
@@ -366,7 +368,7 @@ console.log(c);
 output: {foo: true, bar: false}
 
 =============================================================================================================================================================
-Javascript String Methods
+//Javascript String Methods
 -----------------------------
 
 var str ="abcdef"; output should be -> ["a", "b", "c", "d", "e", "f"]
@@ -412,6 +414,43 @@ func();
 func(1);     
 func("1", "2", "3");
 func(1, 4, 5);
+==================================================================================================================================
+//Closure
+
+A closure is a feature in JavaScript where an inner function has access to the outer (enclosing) function's variables — a scope chain. 
+
+The closure has three scope chains: it has access to its own scope — variables defined between its curly brackets. 
+it has access to the outer function's variables
+
+function create() {
+   var counter = 0;
+   return {
+      increment: function() {
+         counter++;
+      },
+  
+      print: function() {
+         console.log(counter);
+      }
+   }
+}
+var c = create();
+c.increment();
+c.print();
+===============================================================================================================================================
+//prototype
+
+The prototype property allows you to add properties and methods to any object (Number, Boolean, String and Date etc.).
+
+Note - Prototype is a global property which is available with almost all the objects.
+
+function book(val1,val2){
+this.title=val2;
+this.author=val2;
+}
+var mybook = new book('some','name');
+book.prototype.price=null;
+console.log(mybook); 
 =============================================================================================================================================================
 // Javascript Call 
 // functionname.call(obj, functionarguments)
@@ -439,7 +478,7 @@ var bound = addToBind.bind(obj);
 console.dir(bound);
 console.log(bound(2,3,4));
 =============================================================================================================================================================
-Callback function
+//Callback function
 ------------------
 A callback function is a function passed into another function as an argument, 
 which is then invoked inside the outer function to complete some kind of routine or action.
@@ -591,42 +630,21 @@ function createPerson(val) {
   fetchUser();
 
 =================================================================================================================================================
-//Closure
+// console methods
+Measure time taken by a function to execute
 
-A closure is a feature in JavaScript where an inner function has access to the outer (enclosing) function's variables — a scope chain. 
+ console.time("concatenation");
+ that.addNewRows(that.getGridColumn.selectedRowId);
+ console.timeEnd("concatenation");
+ 
+var len=1000;
+var arr= new Array(1000);
+console.time("time1");
+for(var i=0; i<len; i++){
+console.log(arr[i]);}
+console.timeEnd("time1");
 
-The closure has three scope chains: it has access to its own scope — variables defined between its curly brackets. 
-it has access to the outer function's variables
-
-function create() {
-   var counter = 0;
-   return {
-      increment: function() {
-         counter++;
-      },
-  
-      print: function() {
-         console.log(counter);
-      }
-   }
-}
-var c = create();
-c.increment();
-c.print();
-===============================================================================================================================================
-prototype
-
-The prototype property allows you to add properties and methods to any object (Number, Boolean, String and Date etc.).
-
-Note - Prototype is a global property which is available with almost all the objects.
-
-function book(val1,val2){
-this.title=val2;
-this.author=val2;
-}
-var mybook = new book('some','name');
-book.prototype.price=null;
-console.log(mybook); 
+console.table(persons , ["id", "tags"]);
 ===================================================================================================================================================
 Geolocation API
 -----------------
@@ -641,6 +659,36 @@ function displayLocationInfo(position) {
   console.log(`longitude: ${ lng } | latitude: ${ lat }`);
 }
 
+==============================================================================================================================================================
+Detecting an “invalid date” Date instance in JavaScript
+---------------------------------------------------------------------------------------------
+// format M(M)/D(D)(YY)YY
+var dateFormat = /^\d{1,2}[\.|\/|-]\d{1,4}[\.|\/|-]\d{1,4}$/;
+function isValidDate(s) {
+	// format D(D)/M(M)/(YY)YY
+	var dateFormat = /^\d{1,4}[\.|\/|-]\d{1,2}[\.|\/|-]\d{1,4}$/;
+	if (dateFormat.test(s)) {
+		// remove any leading zeros from date values
+		s = s.replace(/0*(\d*)/gi,"$1");
+		var dateArray = s.split(/[\.|\/|-]/);
+		// correct month value
+		dateArray[1] = dateArray[1]-1;
+		// correct year value
+		if (dateArray[2].length<4) {
+			// correct year value
+			dateArray[2] = (parseInt(dateArray[2]) < 50) ? 2000 + parseInt(dateArray[2]) : 1900 + parseInt(dateArray[2]);
+		}
+		var testDate = new Date(dateArray[2], dateArray[1], dateArray[0]);
+		if (testDate.getDate()!=dateArray[0] || testDate.getMonth()!=dateArray[1] || testDate.getFullYear()!=dateArray[2]) {
+			return false;
+		} else {
+			return true;
+		}
+	} else {
+		return false;
+	}
+} 
+console.log(isValidDate("13/30/20165"));
 ==============================================================================================================================================================
 
 RxJs Observable
