@@ -1,12 +1,14 @@
 @NgModule 
 ===================
  @NgModule takes a metadata object that describes how to compile a component's template and how to create an injector at runtime. 
-	It identifies the module's own components, directives, and pipes, making some of them public, through the exports property, so that external components can use them. 
+	It identifies the module's own components, directives, and pipes, making some of them public, through the exports property, 
+	so that external components can use them. 
 	@NgModule can also add service providers to the application dependency injectors.
 
 Providers
 =============
-A provider is an instruction to the DI system on how to obtain a value for a dependency. Most of the time, these dependencies are services that you create and provide.
+A provider is an instruction to the DI system on how to obtain a value for a dependency. Most of the time, 
+these dependencies are services that you create and provide.
 
 
 Dependency Injection
@@ -24,13 +26,30 @@ The idea is that if we have a lot of elements handled in a similar way, then ins
 
 In the handler we get event.target, see where the event actually happened and handle it.
 
-Observables
-==================
+differences between promises and observables  - Using to work with asynchronous data we can use either Promises or Observables. 
+=============================================
 observables is more powefull way of handling http requests. 
 promise handles a single event in http request whether its complete or fail 
 observables like a stream 
 observables can be canceled
 observables supports map,filter,reduce operends
+
+Promise	
+----------
+Emits a single value
+Not Lazy
+Cannot be cancelled	
+
+Observable
+------------------
+Emits multiple values over a period of time
+Lazy. An Observable is not called until we subscribe to the Observable
+Can be cancelled using the unsubscribe() method
+Observable provides operators like map, forEach, filter, reduce, retry, retryWhen etc.
+
+how to resubscribe and retry an Observable if there is an error
+==============================================================
+
 
 Lexical Scope
 Public and Private Scope
@@ -310,9 +329,11 @@ Our Angular 2 project in this article is implemented using Visual Studio Code (V
 
 AOT
 -----------
-AOT does not support typescript version that is above 2.0.10 now. You need to make sure that. Also, you have to change some angular modules like http, platform-browser, or core back to angular 2 -- I use version 2.4.0 --, because typescript of version 2.0.10 or below does not support them!
+AOT does not support typescript version that is above 2.0.10 now. You need to make sure that. Also, you have to change some angular modules like http, 
+platform-browser, or core back to angular 2 -- I use version 2.4.0 --, because typescript of version 2.0.10 or below does not support them!
 
-The Angular Ahead-of-Time (AOT) compiler converts your Angular HTML and TypeScript code into efficient JavaScript code during the build phase before the browser downloads and runs that code.
+The Angular Ahead-of-Time (AOT) compiler converts your Angular HTML and TypeScript code into efficient JavaScript code during the build phase before 
+the browser downloads and runs that code.
 
 This guide explains how to build with the AOT compiler using different compiler options and how to write Angular metadata that AOT can compile.
 
@@ -338,7 +359,8 @@ ngOnChanges(changes: SimpleChanges) A component that needs to detect changes in 
 
 ngOnChanges: 
 ----------------------
-Called every time a data-bound input property changes. It’s called a first time before the ngOnInit hook. The hook receives a SimpleChanges object that contains the previous and current values for the data-bound inputs properties. This hook gets called often, so it’s a good idea to limit the amount of processing it does.
+Called every time a data-bound input property changes. It’s called a first time before the ngOnInit hook. The hook receives a SimpleChanges object that contains 
+the previous and current values for the data-bound inputs properties. This hook gets called often, so it’s a good idea to limit the amount of processing it does.
 
 syntax
 ------------
@@ -396,9 +418,12 @@ ngOnDestroy:
 
 ngOnDestroy()
 ------------------------
-Cleanup just before Angular destroys the directive/component. Unsubscribe observables and detach event handlers to avoid memory leaks(which slows down performance and causes crashes).
+Cleanup just before Angular destroys the directive/component. Unsubscribe observables and detach event handlers to avoid memory leaks
+(which slows down performance and causes crashes).
 
-Similar to the takeWhile() operator, the takeUntil() will emit values until the provided observable emits a value. So, while the takeWhile() operator will emit values while the boolean value provided is true, the takeUntil() operator will emit values until a provided observable emits a value.
+Similar to the takeWhile() operator, the takeUntil() will emit values until the provided observable emits a value. 
+So, while the takeWhile() operator will emit values while the boolean value provided is true, the takeUntil() operator will emit values until a provided observable 
+emits a value.
 
 Directives
 -----------------
@@ -421,7 +446,8 @@ alertStyles = {
  
  Structural Directives
  ==================
- Structural Directives are a way of handling how a component or element renders through the use of the template tag. This allows us to run some code that decides what the final rendered output will be. Angular has a few built-in structural directives such as ngIf, ngFor, and ngSwitch.
+ Structural Directives are a way of handling how a component or element renders through the use of the template tag. This allows us to run some code that decides
+ what the final rendered output will be. Angular has a few built-in structural directives such as ngIf, ngFor, and ngSwitch.
  
  *ngIf="exists"
  *ngFor="let episode of episodes" 
@@ -501,6 +527,11 @@ Bootstrap
 --------------
 bootstrap() takes care of creating a root injector for our application when it’s bootstrapped.
 
+A way to initialize and launch an app or system.
+
+In Angular, an app's root NgModule (AppModule) has a bootstrap property that identifies the app's top-level components.
+During the bootstrap process, Angular creates and inserts these components into the index.html host web page. 
+
 
 @HostListener, @injectable, @inject, @input, @output
 ------------------------------------------------------------------------
@@ -530,7 +561,9 @@ addStdEvent = new EventEmitter<Student>();
  
  @NgModule
  ---------------
- An NgModule is a class marked by the @NgModule decorator. @NgModule takes a metadata object that describes how to compile a component's template and how to create an injector at runtime. It identifies the module's own components, directives, and pipes, making some of them public, through the exports property, so that external components can use them. @NgModule can also add service providers to the application dependency injectors.
+ An NgModule is a class marked by the @NgModule decorator. @NgModule takes a metadata object that describes how to compile a component's template and 
+how to create an injector at runtime. It identifies the module's own components, directives, and pipes, making some of them public, through the exports property, 
+so that external components can use them. @NgModule can also add service providers to the application dependency injectors.
  
  
 
@@ -539,13 +572,25 @@ Difference between Angular 2 and Angular 4
 We know that Angular 2 is completely rewritten from scratch, there is no match between AngularJS and Angular 2. From the developer standpoint, Angular 2 is a complete rewrite from AngularJS and moving from AngularJS to Angular 2 is a complete change. From the developer standpoint, it is learning two different frameworks.
 
 The Angular 2 is released in the year of 2016 whereas Angular 4 is released in the year 2017.
-Changing from Angular 2 to Angular 4 and even future versions of Angular won't be like changing from AngularJS and it won't be like a complete rewrite. It will simply be a change in core libraries.
+
+Changing from Angular 2 to Angular 4 and even future versions of Angular won't be like changing from AngularJS and it won't be like a complete rewrite. 
+It will simply be a change in core libraries.
+
 Angular 2and Angular 4 will use the same concept and patterns. Angular 4 simply is the next version of Angular 2.
+
 If you know Angular 2 already then it is not a big deal to learn Angular 4 because the underline concepts are still the same.
+
 Angular 4 is an inheritance from Angular 2. Angular 4 is simply is the next version of Angular 2with few changes and enhancements.
+
 In Angular 4, a lot of improvements made to reduce the size of the AOT (Ahead-of-time) compiler generated code.
-In Angular 2 only TypeScript 1.8 version was supported, whereas, in Angular 4, it supports TypeScript 2.1 and TypeScript 2.2 compatibility, which means now we can use all new features supported in TypeScript 2.1 and TypeScript 2.2 can be used in Angular 4 application.
-The Animation features are separated from @angular/core package and moved them to new packages. By this way, if we don't import animation packages into your application then the main bundle size will be reduced and gives the performance improvement. As I told you @angular/core package and moved them to new packages, so if you are using these packages in your Angular 2 application then at the time of moving from Angular 2 to Angular 4, we need to change the package reference as well.
+
+In Angular 2 only TypeScript 1.8 version was supported, whereas, in Angular 4, it supports TypeScript 2.1 and TypeScript 2.2 compatibility, 
+which means now we can use all new features supported in TypeScript 2.1 and TypeScript 2.2 can be used in Angular 4 application.
+
+The Animation features are separated from @angular/core package and moved them to new packages. By this way, if we don't import animation packages into your 
+application then the main bundle size will be reduced and gives the performance improvement. As I told you @angular/core package and moved them to new packages, 
+so if you are using these packages in your Angular 2 application then at the time of moving from Angular 2 to Angular 4, we need to change the package reference as well.
+
 In Angular 4, else block newly introduced. I mean, along with *ngif, we can use else block as well. Sample code as below:
 In Angular 2 we were writing like,
 
@@ -590,7 +635,8 @@ console.log(prop);
 
 Decorator  in angular 2
 --------------------------------
- In a simple terms, decorators allows you to attach meta data with the type script class using which angular knows whether that class is a component or directive or module or etc.
+ In a simple terms, decorators allows you to attach meta data with the type script class using which angular knows whether that class is a component or directive 
+or module or etc.
  
  class + decorator = component;
  
@@ -645,7 +691,8 @@ exportAs
 In Angular 5, multiple names support for both directives and components
 HttpClient
 =========
-Before Angular 4.3 versions, we were using @angular/HTTP module for all kinds of HTTP requests. Now, in Angular 5, @angular/http module has been deprecated and introduced new module called HttpClientModule which comes under @angular/common/http package.
+Before Angular 4.3 versions, we were using @angular/HTTP module for all kinds of HTTP requests. Now, in Angular 5, 
+@angular/http module has been deprecated and introduced new module called HttpClientModule which comes under @angular/common/http package.
 Improved Decorator Support
 In Angular 5, we can use lambda expressions instead of naming functions. Sample code snippet as below,
 Before,
@@ -726,7 +773,9 @@ HostListener - Declares a host listener.Angular will invoke the decorated method
 
 HostBinding
 -----------------
-HostBinding -Declares a host property binding.Angular automatically checks host property bindings during change detection. If a binding changes, it will update the host element of the directive. 
+HostBinding -Declares a host property binding.Angular automatically checks host property bindings during change detection. 
+If a binding changes, it will update the host element of the directive. 
+
 # HostBinding - will bind property to host element, If a binding changes, HostBinding will update the host element.
 
 By using the @HostListener and @HostBinding decorators we can both listen to output events from our host element and also bind to input properties on our host element as well.
@@ -857,7 +906,8 @@ Angular 5 now supports expression lowering in decorators for lambdas, and the va
 
 Arrow Functions
 ==============
-Lovingly called the fat arrow (because -> is a thin arrow and => is a fat arrow) and also called a lambda function (because of other languages). Another commonly used feature is the fat arrow function ()=>something. The motivation for a fat arrow is:
+Lovingly called the fat arrow (because -> is a thin arrow and => is a fat arrow) and also called a lambda function (because of other languages). 
+Another commonly used feature is the fat arrow function ()=>something. The motivation for a fat arrow is:
 You don't need to keep typing function
 It lexically captures the meaning of this
 It lexically captures the meaning of arguments
@@ -1805,7 +1855,8 @@ The style is wrapped in a style tag, pushed to head and uniquely identified so i
 
 Native
 ---------
-Native: This is the native encapsulation mechanism of the renderer that will be applied. In our case, it's the browser. Angular will create a shadow DOM for this component, which means that external CSS can't affect our component.
+Native: This is the native encapsulation mechanism of the renderer that will be applied. In our case, it's the browser. 
+Angular will create a shadow DOM for this component, which means that external CSS can't affect our component.
 
 None
 --------
@@ -1870,7 +1921,8 @@ provider: The provider there’s a $get you define and it can be used to get the
 
 diff b/w Module and Component?
 -----------------------------------------------
-Module in angular is set of Components, Services, Filters, or some another smaller modules too, or we can say where you import all these in order to use later in the app for future use. in a single app there can be one or more than one module may exist.
+Module in angular is set of Components, Services, Filters, or some another smaller modules too, 
+or we can say where you import all these in order to use later in the app for future use. in a single app there can be one or more than one module may exist.
 
 Whereas, Component is a single layer or view to perform some actions etc. components can be lazzy loaded as per requirements.
 
@@ -2135,6 +2187,33 @@ Decorators?
 	4. Parameter decorator : @Inject @Injectable
 Routing mechanism?
 
+trackBy
+-------
+The trackBy function takes the index and the current item as arguments and returns the unique identifier by which that item should be tracked.
+
+What are the practical differences between template-driven and reactive forms?
+------------------------------------------------------------------------------
+Template Driven Forms Features
+----------------------------------
+Easy to use
+Suitable for simple scenarios and fails for complex scenarios
+Similar to AngularJS
+Two way data binding(using [(NgModel)] syntax)
+Minimal component code
+Automatic track of the form and its data(handled by Angular)
+Unit testing is another challenge
+
+Reactive Forms Features
+-------------------------
+More flexible, but needs a lot of practice
+Handles any complex scenarios
+No data binding is done (immutable data model preferred by most developers)
+More component code and less HTML markup
+Reactive transformations can be made possible such as
+Handling a event based on a debounce time
+Handling events when the components are distinct until changed
+Adding elements dynamically
+Easier unit testing
 
 https://github.com/WebPredict/angular-2-interview-questions
  

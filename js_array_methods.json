@@ -1,0 +1,1080 @@
+var sample = [1, 2, 3]
+var sum = sample.reduce((sum, elem) => sum + elem)
+console.log(sum)
+
+
+
+How to Recognize an Array
+-----------------------------
+The problem is that the JavaScript operator typeof returns "object"
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+typeof fruits;  // returns object
+
+To solve this problem ECMAScript 5 defines a new method Array.isArray()
+Array.isArray(fruits);   // returns true
+(or)
+fruits instanceof Array; // returns true
+
+ECMAScript 5 is not supported in older browsers
+
+fruits.constructor.toString().indexOf('Array')>-1
+
+1. arr.toString();
+2. arr.join(';');
+3. arr.pop(); // it is easy to remove elements and add new elements
+4. arr.push('elem'); it is easy to add elements and add new elements
+5. arr.shift();
+6. arr.unshift('elem');
+7. delete fruits[0]; //elements can be deleted by using the JavaScript operator delete
+8. arr.splice(); //method can be used to add new items to an array:
+	Ex: var fruits = ["Banana", "Orange", "Apple", "Mango"];
+	    fruits.splice(2, 0, "Lemon", "Kiwi");
+		fruits.splice(0, 1);        // Removes the first element of fruits
+9. arr1.concat(arr2, arr3);   // Concatenates arr1 with arr2 and arr3
+10. arr.slice(); //The slice() method creates a new array. It does not remove any elements from the source array.
+	Ex; var citrus = fruits.slice(3);
+	
+------------------------------------------------
+
+
+
+//Javascript Array Methods;
+
+//1. Foreach
+
+Foreach takes a callback function and run that callback function on each element of array one by one.
+Basically forEach works as a traditional for loop looping over the array and providing you array elements to do operations on them.
+
+Example; 
+
+var sample = [1, 2, 3];
+// es5
+sample.forEach(function (elem, index){
+   console.log(elem + ' comes at ' + index);
+})
+// es6
+sample.forEach((elem, index) => `${elem} comes at ${index}`)
+------------------------------------------------------------------------------------------------------------------------------------
+//2. Filter
+
+The main difference between forEach and filter is that forEach just loop over the array and executes the callback but filter executes the callback and check its return value.
+Also take notice filter does not update the existing array it will return a new filtered array every time.
+
+Ex;
+var sample = [1, 2, 3]
+// es5
+var result = sample.filter(function(elem){
+    return elem !== 2;
+})
+console.log(result);
+// es6
+var result = sample.filter(elem => elem !== 2)
+console.log(result);
+
+Ex-2 Single Multi Dimension Array;
+
+let small_animals = animals.filter((animal) => {
+    return animal.size === "small"
+}) console.log(small_animals); 
+
+Ex-3
+var persons = [
+  {id : 1, name : "John", tags : "javascript"}, 
+  {id : 2, name : "Alice", tags : "javascript"}, 
+  {id : 3, name : "Roger", tags : "java"},
+  {id : 4, name : "Adam", tags : "javascript"},
+  {id : 5, name : "Alex", tags : "java"}
+];
+var javscriptPersons = persons.filter(personObj => personObj.tags.indexOf("javascript") > -1); console.log(javascriptPersons);
+-------------------------------------------------------------------------------------------------------------------------------
+
+3. Map
+
+Map like filter & foreach takes a callback and run it against every element on the array but whats makes it unique is it generate a new array based on your existing array.
+var sample = [1, 2, 3]
+Ex-1 Single Dimension Array;
+// es5
+var mapped = sample.map(function(elem) {
+    return elem * 10;
+})
+// es6
+let mapped = sample.map(elem => elem * 10)
+console.log(mapped);
+
+Ex-2 Single Multi Dimension Array;
+
+var animals = [
+{
+        "name": "cat",
+        "size": "small",
+        "weight": 5
+    },
+    {
+        "name": "dog",
+        "size": "small",
+        "weight": 10
+    },
+    {
+        "name": "lion",
+        "size": "medium",
+        "weight": 150
+    },
+    {
+        "name": "elephant",
+        "size": "big",
+        "weight": 5000
+    },	
+     {
+        "name": "lion",
+        "size": "medium",
+        "weight": 150
+    }
+]
+let animal_names = animals.map((animal, index, animals) => {
+	console.log(animal);
+    return animal.name;
+}) 
+console.log(animal_names);
+--------------------------------------------------------------------------------------------------------------------------------------
+
+4. Reduce
+
+As the name already suggest reduce method of the array object is used to reduce the array to one single value.
+
+var sample = [1, 2, 3]
+// es5
+var sum = sample.reduce(function(sum, elem){
+    return sum + elem;
+})
+// es6
+var sum = sample.reduce((sum, elem) => sum + elem)
+console.log(sum) 
+
+Ex-2 Single Multi Dimension Array;
+
+let total_weight = animals.reduce((weight, animal, index, animals) => {
+    return weight += animal.weight
+}, 0) console.log(total_weight);
+
+temp1.reduce(function(prev, cur) { 
+console.log(new Date(prev.clonedStart), new Date(cur.clonedStart))
+if (new Date(cur.clonedStart).getTime()> new Date(prev.clonedEnd).getTime() || new Date(cur.clonedStart).getTime() < new Date(prev.clonedStart).getTime()) {    
+    console.log("Specified date is not in this range.");  
+}  
+else {  
+   console.log("Specified date is within this range.");  
+}  
+        return prev;    });
+--------------------------------------------------------------------------------------------------------------------------------
+5. Find
+.find() When you want to select a single element from an array.
+
+Ex-1;
+var animals = [
+{
+        "name": "cat",
+        "size": "small",
+        "weight": 5
+    },
+    {
+        "name": "dog",
+        "size": "small",
+        "weight": 10
+    },
+    {
+        "name": "lion",
+        "size": "medium",
+        "weight": 150
+    },
+    {
+        "name": "elephant",
+        "size": "big",
+        "weight": 5000
+    },	
+     {
+        "name": "lion",
+        "size": "medium",
+        "weight": 150
+    },
+]
+var result = animals.find(elem => elem.name=="lion");
+console.log(result);
+
+var array1 = [5, 12, 8, 130, 44];
+
+var found = array1.find(function(element) {
+  return element > 10;
+});
+--------------------------------------------------------------------------------------------------------------------------------
+6. Some
+
+Array.Some is used to check if at least one element in the array passes a condition or not. Like Array.Filter, it accepts a test function where it loops through the source array’s element. It returns true if any one of the element passes the test condition. If all the elements fails on the test function, it returns false. it short circuits the loop as soon as one of element passes the test function. Ex below
+
+//for Version
+var hasFive = false;
+for (var counter=0; counter < numberArray.length; counter++){
+     if (numberArray[counter] === 5){
+        hasFive = true;
+        break;
+     }
+}
+console.log(hasFive);
+//forEach Version
+var hasFive1 = false;
+numberArray.forEach(number => {
+     if (number === 5){
+        hasFive1 = true;
+     }
+})
+console.log(hasFive1);
+//Some version
+var hasFive2 = numberArray.some(number => number === 5);
+//es5 version
+var hasFive2 = numberArray.some(function(number){
+     return number === 5
+});
+console.log(hasFive2); // logs true
+var hasEleven = numberArray.some(number => number === 11);
+console.log(hasEleven); // logs false
+Example 2:- Check for someone with java.
+var persons = [
+  {id : 1, name : "John", tags : "javascript"}, 
+  {id : 2, name : "Alice", tags : "javascript"}, 
+  {id : 3, name : "Roger", tags : "java"},
+  {id : 4, name : "Adam", tags : "javascript"},
+  {id : 5, name : "Alex", tags : "java"}
+];
+var hasJava = persons.some(personObj => personObj.tags.indexOf("java") > -1);
+//es5 version
+var hasJava = persons.some(function(personObj){
+    return personObj.tags.indexOf("java") > -1
+});
+console.log(hasJava);
+===============================================================================================================================
+
+Example 1 :- Filter even numbers
+var numberArray = [1,2,3,4,5,6,7,8,9,10];
+
+//for Version
+var evenNumbers = [];
+for (var counter=0; counter < numberArray.length; counter++){
+    if (numberArray[counter] %2 === 0){
+        evenNumbers.push(numberArray[counter])
+    }
+}
+console.log(evenNumbers);
+
+//forEach Version
+var evenNumbers1 = [];
+numberArray.forEach(number => {
+    if (number%2 === 0){
+        evenNumbers1.push(number)
+    }
+})
+console.log(evenNumbers1);
+
+//filter version
+var evenNumbers2 = numberArray.filter(number => number%2===0);
+console.log(evenNumbers2);
+// es5 style
+var evenNumbers2 = numberArray.filter(function(number){
+   return number%2===0;
+});
+
+Example 2:- Filter objects with tags javascript
+var persons = [
+  {id : 1, name : "John", tags : "javascript"}, 
+  {id : 2, name : "Alice", tags : "javascript"}, 
+  {id : 3, name : "Roger", tags : "java"},
+  {id : 4, name : "Adam", tags : "javascript"},
+  {id : 5, name : "Alex", tags : "java"}
+];
+var javscriptPersons = persons.filter(personObj => personObj.tags.indexOf("javascript") > -1);
+//es5 style
+var javscriptPersons = persons.filter(function(personObj){
+   return personObj.tags.indexOf("javascript") > -1
+});
+console.log(javscriptPersons);
+
+Example 1 :- find square of numbers
+var numberArray = [1,2,3,4,5,6,7,8,9,10];
+//for Version
+var squareNumbers = [];
+for (var counter=0; counter < numberArray.length; counter++){
+   squareNumbers.push(numberArray[counter] * numberArray[counter])
+}
+console.log(squareNumbers);
+
+//forEach Version
+var squareNumbers1 = [];
+numberArray.forEach(number => {
+    squareNumbers1.push(number*number);
+})
+console.log(squareNumbers1);
+
+//Map version
+var squareNumbers2 = numberArray.map(number => number*number);
+//es5 version
+var squareNumbers2 = numberArray.map(function(number){
+     return number*number;
+});
+console.log(squareNumbers2);
+
+Example 2:- Map objects to String array having name
+var persons = [
+  {id : 1, name : "John", tags : "javascript"}, 
+  {id : 2, name : "Alice", tags : "javascript"}, 
+  {id : 3, name : "Roger", tags : "java"},
+  {id : 4, name : "Adam", tags : "javascript"},
+  {id : 5, name : "Alex", tags : "java"}
+];
+var nameArray = persons.map(personObj => personObj.name);
+//es5 version
+var nameArray = persons.map(function(personObj){
+      return personObj.name;
+});
+console.log(nameArray);
+
+Example 1 :- find square of numbers
+var numberArray = [1,2,3,4,5,6,7,8,9,10];
+//for Version
+var squareNumbers = [];
+for (var counter=0; counter < numberArray.length; counter++){
+   squareNumbers.push(numberArray[counter] * numberArray[counter])
+}
+console.log(squareNumbers);
+
+//forEach Version
+
+var squareNumbers1 = [];
+numberArray.forEach(number => {
+    squareNumbers1.push(number*number);
+})
+console.log(squareNumbers1);
+
+//Map version
+var squareNumbers2 = numberArray.map(number => number*number);
+//es5 version
+var squareNumbers2 = numberArray.map(function(number){
+     return number*number;
+});
+console.log(squareNumbers2);
+
+Example 2:- Map objects to String array having name
+var persons = [
+  {id : 1, name : "John", tags : "javascript"}, 
+  {id : 2, name : "Alice", tags : "javascript"}, 
+  {id : 3, name : "Roger", tags : "java"},
+  {id : 4, name : "Adam", tags : "javascript"},
+  {id : 5, name : "Alex", tags : "java"}
+];
+var nameArray = persons.map(personObj => personObj.name);
+//es5 version
+var nameArray = persons.map(function(personObj){
+      return personObj.name;
+});
+console.log(nameArray);
+=====================================================================================================================
+Adding Array Elements
+----------------------------
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.push("Lemon"); 
+(or)
+fruits[fruits.length] = "Lemon";
+
+=======================================================================================================================
+//Sorting an Array
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort();
+Reversing an Array
+----------------------------
+fruits.reverse();
+
+Numeric Sort
+------------------------- 
+var points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return a - b});
+
+//now points[0] contains the lowest value
+//and points[points.length-1] contains the highest value
+
+sort an array descending
+---------------------------
+var points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return b - a});
+
+
+Find the Highest (or Lowest) Array Value
+-----------------------------------------
+
+var points = [40, 100, 1, 5, 25, 10];
+
+Math.max(0, 150, 30, 20, -8, -200);
+
+function myArrayMax(arr) {
+  return Math.max.apply(null, arr);
+} 
+
+function myArrayMin(arr) {
+  return Math.min.apply(null, arr);
+}
+myArrayMax(points);
+
+var cars = [
+  {type:"Volvo", year:2016},
+  {type:"Saab", year:2001},
+  {type:"BMW", year:2010}
+];
+cars.sort(function(a, b){return a.year - b.year});
+
+Comparing string properties is a little more complex:
+----------------------------------------------------
+cars.sort(function(a, b){
+  var x = a.type.toLowerCase();
+  var y = b.type.toLowerCase();
+  if (x < y) {return -1;}
+  if (x > y) {return 1;}
+  return 0;
+});
+===========================================================================================================================================================
+//Merge two objects (like multiple inheritance).
+---------------------------------------------
+var obj1 = { food: 'pizza', car: 'ford', animal: 'dog'}
+var obj2 = { animal: 'cat de' }
+console.log(Object.assign(obj1, obj2));
+output: {food: "pizza", car: "ford", animal: "cat de"}
+
+--------------------------------------------------------------------------------------------------
+//Cloning an object
+-------------------
+var copy = Object.assign({}, obj);
+ 
+ 
+var obj = { food: 'pizza', car: 'ford', animal: 'dog'}
+var src = { animal: 'cat de' }
+function extend(obj, src) {
+    Object.keys(src).forEach(function(key) { obj[key] = src[key]; });
+    return obj;
+} 
+console.log(extend(obj,src));
+output: {food: "pizza", car: "ford", animal: "cat de"}
+
+var a = { foo: true }, b = { bar: false };
+var c = jQuery.extend(a, b);
+console.log(c);
+output: {foo: true, bar: false}
+
+=============================================================================================================================================================
+//Javascript String Methods
+-----------------------------
+
+var str ="abcdef"; output should be -> ["a", "b", "c", "d", "e", "f"]
+ans: str.split('');
+
+var str ="abcdef"; output should be -> ["f", "e", "d", "c", "b", "a"]
+ans: str.split('').reverse();
+
+var str ="abcdef"; output should be -> "fedcba"
+ans: str.split('').reverse().join('');
+
+var arr=["f", "e", "d", "c", "b", "a"] output should be -> "f,e,d,c,b,a"
+ans: str..join();
+
+var arr=["f", "e", "d", "c", "b", "a"] output should be -> "fedcba"
+ans: str..join('');
+
+ES5 version use Array.concat:
+------------------------------
+var array1 = ["Vijendra","Singh"];
+var array2 = ["Singh", "Shakya"];
+
+var array3 = array1.concat(array2); // Merges both arrays
+// [ 'Vijendra', 'Singh', 'Singh', 'Shakya' ]
+
+
+var str ="abcdef";
+function duplicate(){};
+duplicate.prototype.ans=str.split('').concat(str.split('').reverse());
+ans:["a", "b", "c", "d", "e", "f", "f", "e", "d", "c", "b", "a"]
+
+
+var arr=["a", "b", "c", "d", "e", "f", "f", "e", "d", "c", "b", "a"];
+How to remove duplicates
+var unique_array = Array.from(new Set(arr)); //or [...new Set(arr)]
+ans: ["a", "b", "c", "d", "e", "f"]
+
+function func(x){
+   console.log(typeof x, arguments[2]);
+	console.log(x);
+}
+func();                
+func(1);     
+func("1", "2", "3");
+func(1, 4, 5);
+==================================================================================================================================
+//Closure
+
+A closure is a feature in JavaScript where an inner function has access to the outer (enclosing) function's variables — a scope chain. 
+
+The closure has three scope chains: it has access to its own scope — variables defined between its curly brackets. 
+it has access to the outer function's variables
+
+function create() {
+   var counter = 0;
+   return {
+      increment: function() {
+         counter++;
+      },
+  
+      print: function() {
+         console.log(counter);
+      }
+   }
+}
+var c = create();
+c.increment();
+c.print();
+===============================================================================================================================================
+//prototype
+
+The prototype property allows you to add properties and methods to any object (Number, Boolean, String and Date etc.).
+
+Note - Prototype is a global property which is available with almost all the objects.
+
+function book(val1,val2){
+this.title=val2;
+this.author=val2;
+}
+var mybook = new book('some','name');
+book.prototype.price=null;
+console.log(mybook); 
+=============================================================================================================================================================
+// Javascript Call 
+// functionname.call(obj, functionarguments)
+var obj={num:3};
+var addToThis = function(a,b,c){
+console.log('this', this);
+return this.num+a+b+c;
+}
+console.log(addToThis.call(obj,2,1,3));
+
+// Javascript Apply 
+// functionname.apply(obj, functionarguments)
+var arr=[2,3,4];
+var addToThisApply = function(a,b,c){
+console.log('this', this);
+return this.num+a+b+c;
+}
+console.log(addToThisApply.apply(obj,arr));
+
+// Javascript Bind
+var addToBind = function(a,b,c){
+return this.num+a+b+c;
+}
+var bound = addToBind.bind(obj);
+console.dir(bound);
+console.log(bound(2,3,4));
+=============================================================================================================================================================
+//Callback function
+------------------
+A callback function is a function passed into another function as an argument, 
+which is then invoked inside the outer function to complete some kind of routine or action.
+
+A callback function, also known as a higher-order function, is a function that is passed to another function 
+(let’s call this other function “otherFunction”) as a parameter, and the callback function is called (or executed) inside the otherFunction. 
+
+A callback is a plain JavaScript function passed to some method as an argument or option. 
+Some callbacks are just events, called to give the user a chance to react when a certain state is triggered.
+// simple callback function
+var x = function(){
+console.log("this is x ");
+}
+var y = function(callback){
+console.log("this is y function")
+callback();
+}
+y(x);
+
+
+function add(a,b){
+return a+b;
+}
+
+function multi(a,b){
+return a*b
+}
+
+var calc = function(a,b,callback){
+if(typeof callback ==='function'){
+return callback(a,b);
+}
+}
+console.log(calc(1,2,multi));
+
+var myarr=[{id:7,str:"apple"},{id:5,str:"mango"},{id:1, str:"banana"}]
+myarr.sort(function(v1,v2){
+if(v1.id>v2.id){
+return -1;
+} else{
+return 1;
+}
+})
+console.log(myarr);
+
+var friends = ["Mike", "Stacy", "Andy", "Rick"];
+friends.forEach(function (eachName, index){
+console.log(index + 1 + ". " + eachName); // 1. Mike, 2. Stacy, 3. Andy, 4. Rick
+});
+
+function greeting(name) {
+  alert('Hello ' + name);
+}
+function processUserInput(callback) {
+  var name = prompt('Please enter your name.');
+  callback(name);
+}
+processUserInput(greeting);
+
+The call() method takes arguments separately.
+
+The apply() method takes arguments as an array.
+
+A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
+
+
+var persons = [
+  {id : 1, name : "John", tags : "javascript"}, 
+  {id : 2, name : "Alice", tags : "javascript"}, 
+  {id : 3, name : "Roger", tags : "java"},
+  {id : 4, name : "Adam", tags : "javascript"},
+  {id : 5, name : "Alex", tags : "java"}
+];
+
+function getPerson(){
+  setTimeout(() => {
+    let output='';
+    persons.forEach(element => {
+      output+=`<li>${element.name}</li>`
+    });
+    console.log(output);
+  }, 1000);
+}
+getPerson();
+
+function createPerson(val,callback) {
+setTimeout(() => {
+  persons.push(val);
+  callback();
+  }, 2000);
+}
+createPerson({id : 6, name : "Ranjit", tags : "Node"}, getPerson);
+
+================================================================================================================================================
+// Promise
+
+var persons = [
+  {id : 1, name : "John", tags : "javascript"}, 
+  {id : 2, name : "Alice", tags : "javascript"}, 
+  {id : 3, name : "Roger", tags : "java"},
+];
+
+function getPerson(){
+  setTimeout(() => {
+    let output='';
+    persons.forEach(element => {
+      output+=`<li>${element.name}</li>`
+    });
+    console.log(output);
+  }, 1000);
+}
+getPerson();
+
+
+function createPerson(val) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      persons.push(val);  
+      const error = false;
+      if(!error){
+        resolve('success');
+      } else {
+        reject ('failed');
+      }
+      }, 2000);
+  });
+  }
+  createPerson({id : 6, name : "Ranjit", tags : "Node"})
+  .then(getPerson)
+  .catch(err => console.log(err));
+
+
+  const Promise1 = Promise.resolve('Hello world');
+  const Promise2 = 10;
+  const Promise3 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('goodbye');
+  }, 2000);
+  });
+  const Promise4 = fetch('https://jsonplaceholder.typicode.com/users').then(res => res.json());
+  Promise.all([Promise1, Promise2, Promise3,Promise4]).then(val => console.log(val));
+
+  //Async / Await
+  async function asynFun(){
+    await createPerson({id : 6, name : "Ranjit", tags : "Node"});
+    getPerson();
+  }
+  asynFun();
+
+//Async / Await /Fetch
+  async function fetchUser() {
+    const res =  await fetch('https://jsonplaceholder.typicode.com/users');
+    const data = await res.json();
+    console.log(data);
+  }
+  fetchUser();
+==============================================================================================================================================
+What is the use of the "this" keyword?
+
+The keyword â€˜thisâ€™ refers to the current instance of the object when used inside a function. But, when used outside a function, it refers to the window object.
+
+What is the difference between typeof and instanceof operators in Javascript?
+
+The typeof operator returns a string of what type the operand is. Whereas, the instanceof operator does not work with primitive data types; but works with objects and checks on what type the object is.
+
+What is an Event Bubbling in Javascript?
+
+When an event is fired on an HTML element, the execution starts from that event and goes to its parent element. From there, the execution passes to its parent element and so on till the body element.
+
+
+Inheritance
+	JavaScript uses prototype based inheritance. Every object has a prototype, and when a method of the object is called then JavaScript tries to find the right function to execute from the prototype object.
+
+=================================================================================================================================================
+// console methods
+Measure time taken by a function to execute
+
+ console.time("concatenation");
+ that.addNewRows(that.getGridColumn.selectedRowId);
+ console.timeEnd("concatenation");
+ 
+var len=1000;
+var arr= new Array(1000);
+console.time("time1");
+for(var i=0; i<len; i++){
+console.log(arr[i]);}
+console.timeEnd("time1");
+
+console.table(persons , ["id", "tags"]);
+===================================================================================================================================================
+Geolocation API
+-----------------
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(displayLocationInfo);
+}
+
+function displayLocationInfo(position) {
+  const lng = position.coords.longitude;
+  const lat = position.coords.latitude;
+
+  console.log(`longitude: ${ lng } | latitude: ${ lat }`);
+}
+
+==============================================================================================================================================================
+Detecting an “invalid date” Date instance in JavaScript
+---------------------------------------------------------------------------------------------
+// format M(M)/D(D)(YY)YY
+var dateFormat = /^\d{1,2}[\.|\/|-]\d{1,4}[\.|\/|-]\d{1,4}$/;
+function isValidDate(s) {
+	// format D(D)/M(M)/(YY)YY
+	var dateFormat = /^\d{1,4}[\.|\/|-]\d{1,2}[\.|\/|-]\d{1,4}$/;
+	if (dateFormat.test(s)) {
+		// remove any leading zeros from date values
+		s = s.replace(/0*(\d*)/gi,"$1");
+		var dateArray = s.split(/[\.|\/|-]/);
+		// correct month value
+		dateArray[1] = dateArray[1]-1;
+		// correct year value
+		if (dateArray[2].length<4) {
+			// correct year value
+			dateArray[2] = (parseInt(dateArray[2]) < 50) ? 2000 + parseInt(dateArray[2]) : 1900 + parseInt(dateArray[2]);
+		}
+		var testDate = new Date(dateArray[2], dateArray[1], dateArray[0]);
+		if (testDate.getDate()!=dateArray[0] || testDate.getMonth()!=dateArray[1] || testDate.getFullYear()!=dateArray[2]) {
+			return false;
+		} else {
+			return true;
+		}
+	} else {
+		return false;
+	}
+} 
+console.log(isValidDate("13/30/20165"));
+==============================================================================================================================================================
+Different ways of creating object.
+---------------------------------
+
+A. Creating Object using Literal notation:
+
+var object = {
+	key:pair.
+	key:pair.
+}
+example:
+--------
+var person = {
+	name: 'suriya', 
+	age:29,
+	getName:function(){
+		return this.name;
+	}
+}
+
+B. Creating Object using Object constructor
+	
+var person = new Object();
+person.name = 'jaay'
+
+C. using Factory function: 
+Factory function allows to encapsulate and re-use the logic for crating similar
+object.
+ 
+var newObject = function(name){
+	var demo = new Object();
+	demo.name = name;
+	demo.getDemo = function(){
+		return this.name;
+	}
+	return demo;
+}
+
+var obj1 = new Object('sample1');
+var obj2 = new Object('sample2');
+console.log(obj1.getDemo());
+console.log(obj2.getDemo());
+
+D. Using Function constructor
+
+In JS, its possible to call any function with new operator in front of it.
+
+function Person(name){
+	this.name = name;
+	this.getName = function(){
+	return this.name;
+	}
+};
+var person1 = new Person('Jaay');
+
+E. using prototype: 
+Special function in javascript. Actually they're object they can create other object and they automatically get a field called prototype. A prototype is a plain with single field, called constructor, pointing the function.
+
+
+function Person(){}
+
+Person.prototype.name = 'suriya';
+var person1 = new Person();
+var person2 = new Person()
+
+F. Combination of prototype and function
+
+function Person(name){
+	this.name = name;
+}
+Person.prototype.getName = function (){
+	return this.name;
+}
+var person1 = new Person('jaay');
+var person2 = new Person('suriya');
+
+G. Singleton
+
+var singleton = new function(){
+	this.name = 'suriya'
+}
+
+H. New way
+var obj = object.create({});
+
+How to get object length
+-----------------------------
+var person = {
+	name: 'suriya', 
+	age:29,
+	getName:function(){
+		return this.name;
+	}
+}
+Ans :  Object.keys(person).length;
+		(or)
+	let count;
+	for (let i in a) {
+    if (a.hasOwnProperty(i)) {
+        count++;
+		}
+	}
+
+-----------------------------------------------------------------------------------------------------------------------------------
+//Closure:
+----------------
+	Closure in javascript means an inner function have access to the outer function variable that are defined in the outer function 
+	function outerFunction(){
+	var name = 'Suriya';
+
+	function innerFunction(){
+		console.log('My name is', name)
+	}
+	return innerFunction()
+}
+var callFunction = outerFunction();
+callFunction();
+
+Closures has important role in callbacks and asynchronous programming.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+What is object mutation, sealing and freezing?
+----------------------------------------------------
+An immutable object is an object whose state or properties cannot be changed after it is created.
+
+Seal an object: Object.seal() method seals an object and preventing new properties from being added to it and making all existing properties as non- configurable. 
+But values of present properties can still be changed as long as they are writable
+	
+var obj = {name : ‘suriya’}
+Object.seal(obj); 
+obj.baz = 'age' ; //this new property will not be added since the object is sealed
+obj.name = 'baz'; // by doing this we can still modify the existing property.
+
+Freezing an Object:
+----------------------
+	Object.freeze() method wont allow to add or modify the exsiting properties
+	var example  = {
+	name :'suriya'
+}
+Object.freeze(example); //object freezed
+Object.isFrozen(example) // will return true
+
+example.age = 22; // fails to add
+example.name = 'demo' // fails to modifiy	
+
+What is the difference between call() and apply()?
+----------------------------------------------------
+	apply() method invokes the function with argument as an array.
+	call() method requires the parameters to be listed explicitly.
+	bind(): used to return bound function that, when executed later. Simply, bind() can be used when the function needs to be called later.
+
+example:
+	function fun(name, profile){
+		console.log('name is  ' + name , 'profile is ' + profile)
+}
+fun.apply(undefined, ['suriya', 'fe']);
+fun.call(undefined, 'suriya', 'fe')
+
+purpose of using above methods: if we want to pass the different ‘this’ value to the function, and it will invoke the function immediately.
+
+
+
+splice() and slice() methods in JS?
+------------------------------------
+	splice() method returns removed item(s) in an array. And it can change the original array. splice() can take n number of aruguments.
+
+	slice() method returns selected element(s) in an array, as a new array object.
+
+	var spl = [2,3,4,66,981]
+	spl.splice(1);
+	
+	var spl = [2,3,4,66,981]
+	spl.splice(1,3);
+	
+	var sli = [2,3,4,66,981]
+	sli.slice(2);
+
+Array methods in JS?
+----------------------
+	shift() -  removes first element from an array and return it 
+	unshift() – add the given element at the start of an array
+	Push()- add the given element at the end of the array
+	Pop() – removes last element from an array
+	
+
+Remove duplicate from Array
+-----------------------------
+var ar = [1,7,4,3,6,8,9,2,5,1,6,8,3];
+let bset = new Set(ar);
+[...bset];
+(or)
+
+var ar = [1,7,4,3,6,8,9,2,5,1,6,8,3];
+var obj = {};
+for(let i of ar){
+  obj[i]=true;
+}
+obj;
+Object.keys(obj);
+
+ (or)
+ 
+function fun(){
+var ar = [1,3,6,8,9,2,5,1,6,8,3];
+var b=[]; ar.sort();
+let size= ar.length;
+for(let i=0;i<size;i++){
+  if(b.indexOf(ar[i])===-1){
+    b.push(ar[i]);
+  }
+}
+
+  return console.log(b);
+}
+fun();
+
+Javascript DOM manipulation methods?
+------------------------------------------
+querySelector() – method returns first element that matches one or more css selectors. It will return NULL if no match found
+
+querySelectorAll() – returns only the first instance of all matching element
+ 
+addEventListener() - <button onclick=foo>hello</button>
+ 	
+var  btn = document.querySelector(‘button’)
+btn.addEventListener(‘click’,foo);
+removeEventListener() – detach previously added event 
+createElement()
+appendChild() and removeChild(), replaceChild(), cloneNode()
+setAttribute() and getAttribute()
+
+
+====================================================================================================================================================
+RxJs Observable
+------------------------------------------
+import { Observable } from 'rxjs/Observable';
+import { interval } from 'rxjs/observable/interval';
+import { timer } from 'rxjs/observable/timer';
+import { fromEvent } from 'rxjs/observable/fromEvent';
+@Component({
+    selector: "overlapPopup",
+    template: `<div id="overlapGridContainer"></div>`
+})
+
+export class overlapGridPopup implements OnInit {
+ngOnInit(): void {
+        const interval$ = interval(1000);
+        const timer$ = timer(3000,1000);
+        interval$.subscribe(val=>console.log("stream 1", val));
+        
+        const click$=fromEvent(document,"click");
+        click$.subscribe(evt=>console.log(evt));
+    }
+}
+
+
+import { interval } from 'rxjs/observable/interval';
+import { share } from 'rxjs/operators';
+
+const interval$ = interval(1000).pipe(share());
+
+interval$.subscribe(value => console.log(`Subscriber 1: ${value}`));
+
+setTimeout(() => {
+  interval$.subscribe(value => console.log(`Subscriber 2: ${value}`))
+}, 3000

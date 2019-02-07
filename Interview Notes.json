@@ -35,6 +35,19 @@ Component decorator allows you to mark a class as an Angular component and provi
 instantiated and used at runtime.
 
 
+Roles and Responsibilities:
+
+Make design and technical decisions for AngularJS projects
+
+Delivering a complete front end application
+Coordinating the workflow between the graphic designer, the HTML coder, and yourself
+Cooperating with the back-end developer in the process of building the RESTful API
+Communicating with external web services
+
+Creating self-contained, reusable, and testable modules and components
+Ensuring a clear dependency chain, in regard to the app logic as well as the file system
+Validating user actions on the client side and providing responsive feedback
+
 
 Html 5 Question;
 ==================

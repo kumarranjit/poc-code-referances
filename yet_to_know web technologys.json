@@ -42,31 +42,6 @@ new regular expression features and rest/spread parameters.
 => karma is a test runner,jasmine is testing frame work for karma
 -> Understanding @ViewChildren, @ViewChild, @ContentChildren and @ContentChild
 
-Angular interview Questions
-1. angular style encapsulation
-2. why angular js developed as a SPA?
-3. angular pipe example, how to develope custome pipe
-4. what is typescript Enum, Rest Parameters?
-5. what are the datatypes available in typescript
-6. what difference between typescript and  ES6(ECMAScript 6, also known as ECMAScript 2015)
-7. what is mergeMap in RxJS?
-
-============================================
-1. what is decorators in angular?
-2. how compiler know the component file and module file?
-3. what is two-way property binding?
-4. where we store AUTH token
-5. different type of browser cache?
-6. Difference between nghide and ngif
-7. how many files we create in angular?
-8. which command we use to run project?
-9. What is an AsyncPipe in Angular?
-==========================================================================
-1. Explain Zone in Angular?
-2. Explain Ivy Renderer in Angular?
-3. What is Bazel and Closure Compiler in Angular6?
-4. Explain Service Worker in reference to Angular JS
-============================================================================
 
 components & Templates, services, Routing, HttpClient, Directives, Pipes, Rective Forms, Dependency Injection, 
 Component Interaction, Dynamic components, View Encapsulation, angular lazyloding
