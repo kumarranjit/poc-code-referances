@@ -1,0 +1,128 @@
+Semantic elements = elements with a meaning.
+-----------------
+Semantics is the study of the meanings of words and phrases in a language.
+
+What are Semantic Elements?
+---------------------------
+A semantic element clearly describes its meaning to both the browser and the developer.
+
+Examples of non-semantic elements: <div> and <span> - Tells nothing about its content.
+
+Examples of semantic elements: <form>, <table>, and <article> - Clearly defines its content.
+
+
+Many web sites contain HTML code like: <div id="nav"> <div class="header"> <div id="footer">
+to indicate navigation, header, and footer.
+
+HTML5 offers new semantic elements to define different parts of a web page:  
+--------------------------------------------------------------------------
+<article>
+<aside>
+<details>
+<figcaption>
+<figure>
+<footer>
+<header>
+<main>
+<mark>
+<nav>
+<section>
+<summary>
+<time>
+
+HTML <!DOCTYPE> Declaration
+
+The <!DOCTYPE> declaration must be the very first thing in your HTML document, before the <html> tag.
+
+The <!DOCTYPE> declaration is not an HTML tag; it is an instruction to the web browser about what version of HTML the page is written in.
+
+In HTML 4.01, the <!DOCTYPE> declaration refers to a DTD, because HTML 4.01 was based on SGML. The DTD specifies the rules for the markup language, so that the browsers render the content correctly.
+
+HTML5 is not based on SGML, and therefore does not require a reference to a DTD.
+
+Tip: Always add the <!DOCTYPE> declaration to your HTML documents, so that the browser knows what type of document to expect.
+
+Differences Between HTML 4.01 and HTML5
+	There are three different <!DOCTYPE> declarations in HTML 4.01. In HTML5 there is only one:
+
+HTML 4.01 Strict
+This DTD contains all HTML elements and attributes, but does NOT INCLUDE presentational or deprecated elements (like font). Framesets are not allowed.
+
+The position Property
+----------------------
+The position property specifies the type of positioning method used for an html element.
+
+Elements are then positioned using the top, bottom, left, and right properties. However, these properties will not work unless the position property is set first. 
+They also work differently depending on the position value.
+
+There are five different position values:
+static
+relative
+fixed
+absolute
+sticky
+
+position: static;
+HTML elements are positioned static by default.
+
+Static positioned elements are not affected by the top, bottom, left, and right properties.
+
+An element with position: static; is not positioned in any special way; it is always positioned according to the normal flow of the page:
+
+position: relative;
+An element with position: relative; is positioned relative to its normal position.
+Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position. 
+Other content will not be adjusted to fit into any gap left by the element.
+
+position: fixed;
+An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. 
+The top, right, bottom, and left properties are used to position the element.
+
+position: sticky;
+An element with position: sticky; is positioned based on the user's scroll position.
+
+A sticky element toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed).
+
+
+The display: inline-block Value
+-----------------------------------
+Compared to display: inline, the major difference is that display: inline-block allows to set a width and height on the element.
+
+Also, with display: inline-block, the top and bottom margins/paddings are respected, but with display: inline they are not.
+
+Compared to display: block, the major difference is that display: inline-block does not add a line-break after the element, 
+so the element can sit next to other elements.
+
+One common use for display: inline-block is to display list items horizontally instead of vertically. The following example creates horizontal navigation links:
+
+What are Pseudo-classes?
+-------------------------
+A pseudo-class is used to define a special state of an element.
+	Style an element when a user mouses over it
+Style visited and unvisited links differently
+Style an element when it gets focus
+
+CSS Opacity / Transparency
+	The opacity property specifies the opacity/transparency of an element.
+	
+CSS Transitions
+------------------
+CSS transitions allows you to change property values smoothly (from one value to another), over a given duration.
+
+To create a transition effect, you must specify two things:
+
+->the CSS property you want to add an effect to
+->the duration of the effect
+
+Note: If the duration part is not specified, the transition will have no effect, because the default value is 0.
+
+What is HTML Canvas?
+--------------------
+The HTML <canvas> element is used to draw graphics, on the fly, via JavaScript.
+
+The <canvas> element is only a container for graphics. You must use JavaScript to actually draw the graphics.
+
+Canvas has several methods for drawing paths, boxes, circles, text, and adding images.
+
+SVG is a language for describing 2D graphics in XML.
+In SVG, each drawn shape is remembered as an object. If attributes of an SVG object are changed, the browser can automatically re-render the shape.

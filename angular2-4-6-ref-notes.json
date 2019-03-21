@@ -225,18 +225,22 @@ export class ChildComponent {
 }
 Unrelated Components: Sharing Data with a Service
 ------------------------------------------------------------------------------------
-When passing data between components that lack a direct connection, such as siblings, grandchildren, etc, you should you a shared service. When you have data that should aways been in sync, I find the RxJS BehaviorSubject very useful in this situation.
+When passing data between components that lack a direct connection, such as siblings, grandchildren, etc, you should you a shared service. When you have data that 
+should aways been in sync, I find the RxJS BehaviorSubject very useful in this situation.
 
 You can also use a regular RxJS Subject for sharing data via the service, but here’s why I prefer a BehaviorSubject.
 
 It will always return the current value on subscription - there is no need to call onnext
 It has a getValue() function to extract the last value as raw data.
 It ensures that the component always receives the most recent data.
-In the service, we create a private BehaviorSubject that will hold the current value of the message. We define a currentMessage variable handle this data stream as an observable that will be used by the components. Lastly, we create function that calls next on the BehaviorSubject to change its value.
+In the service, we create a private BehaviorSubject that will hold the current value of the message. We define a currentMessage variable handle this data stream as 
+an observable that will be used by the components. Lastly, we create function that calls next on the BehaviorSubject to change its value.
 
-The parent, child, and sibling components all receive the same treatment. We inject the DataService in the constructor, then subscribe to the currentMessage observable and set its value equal to the message variable.
+The parent, child, and sibling components all receive the same treatment. We inject the DataService in the constructor, then subscribe to the currentMessage 
+observable and set its value equal to the message variable.
 
-Now if we create a function in any one of these components that changes the value of the message. when this function is executed the new data it’s automatically broadcast to all other components.
+Now if we create a function in any one of these components that changes the value of the message. when this function is executed the new data it’s automatically 
+broadcast to all other components.
 
 data.service.ts
 import { Injectable } from '@angular/core';
@@ -315,15 +319,18 @@ Observable.interval(1000).takeWhile(()=>!stopFlag).subscribe(()=>{
 
 What is webpack?
 ------------------------------------------------
-Webpack is a popular module bundler which is used as a tool for bundling application source code in small blocks or chunks, so that code can be loaded on demand from the server into a browser. This is also referred to as “code splitting”.
+Webpack is a popular module bundler which is used as a tool for bundling application source code in small blocks or chunks, so that code can be loaded on demand 
+from the server into a browser. This is also referred to as “code splitting”.
 
-The bundle is a JavaScript file which incorporates assets belonging together, and is served to the client in a response to a single file request. This bundle can include JavaScript, HTML, CSS and other type of files. Following are some goals of the WebPack:
+The bundle is a JavaScript file which incorporates assets belonging together, and is served to the client in a response to a single file request. This bundle can 
+include JavaScript, HTML, CSS and other type of files. Following are some goals of the WebPack:
 
 Best suited for big projects where several libraries are used on the client side.
 Easy to integrate third party libraries as modules in an application
 Spilt dependencies across components into small block and loaded on demand.
 Every static asset of application (html, Css, image) is loaded as module.
-A major part of Webpack is loaders. These are used to transform any type of files e.g. CoffeScript into JavaScript, or inline images as data URLs and so on. Loaders preprocess files which are used in application using require() or import.
+A major part of Webpack is loaders. These are used to transform any type of files e.g. CoffeScript into JavaScript, or inline images as data URLs and so on. 
+Loaders preprocess files which are used in application using require() or import.
 
 Our Angular 2 project in this article is implemented using Visual Studio Code (VSCode), which is a free IDE by Microsoft.
 
@@ -946,15 +953,20 @@ The Angular Material library uses component dev kit, which provides more than 30
 
 Service Worker
 ---------------------------------------
-It is a script that runs in the web browser and manages to cache for an application. Service worker is included in angular 5. In angular 6 service worker comes with bug fixes and additional feature.
+It is a script that runs in the web browser and manages to cache for an application. Service worker is included in angular 5. In angular 6 service worker comes 
+with bug fixes and additional feature.
 
 Schematics and Ng update.
 ---------------------------------------
-Angular CLI generates Angular artifacts using the technology called Schematics. If you decide to create your own templates and have Angular CLI explore it, Schematics will help you with this. Staring from Angular CLI 1.7, you can use the ng update that automatically updates your project dependencies and makes automated version fixes. With Schematics, you’ll be able to create your own code transformations like ng update.
+Angular CLI generates Angular artifacts using the technology called Schematics. If you decide to create your own templates and have Angular CLI explore it, 
+Schematics will help you with this. Staring from Angular CLI 1.7, you can use the ng update that automatically updates your project dependencies and makes automated 
+version fixes. With Schematics, you’ll be able to create your own code transformations like ng update.
 
 Router
 ---------------------------------------
-Added navigationSource and restoredState to NavigationStart , NavigationStart there is no way to know if navigation was triggered imperatively or via the location change. These two use cases should be handled differently for a variety of use cases (e.g., scroll position restoration). This PR adds a navigation source field and restored navigation id (passed to navigations triggered by a URL change).
+Added navigationSource and restoredState to NavigationStart , NavigationStart there is no way to know if navigation was triggered imperatively or via the location 
+change. These two use cases should be handled differently for a variety of use cases (e.g., scroll position restoration). This PR adds a navigation source field and
+restored navigation id (passed to navigations triggered by a URL change).
 
 Language Service
 ---------------------------------------
@@ -976,10 +988,9 @@ Despite the fact that the term “transpiling” has been around since last cent
 Firstly, transpiling is a specific kind of compiling. This helps a great deal as we now know we are talking about the same kind of thing. It is actually a specific kind of compiling. So how do we define it compared to the more general term?
 
 Compiling
-is the general term for taking source code written in one language and transforming into another
-Transpiling
-is a specific term for taking source code written in one language and transforming into another language that has a similar level of abstraction
-So (simplistically) when you compile C#, your method bodies are transformed by the compiler into IL. This cannot be called transpiling because the two languages are very different levels of abstraction.
+is the general term for taking source code written in one language and transforming into another Transpilingis a specific term for taking source code written in one 
+language and transforming into another language that has a similar level of abstraction So (simplistically) when you compile C#, your method bodies are transformed 
+by the compiler into IL. This cannot be called transpiling because the two languages are very different levels of abstraction.
 
 When you compile TypeScript, it is transformed by the compiler into JavaScript. These are very similar levels of abstraction, so you could call this transpiling.
 
@@ -1028,7 +1039,8 @@ We just need to create one entry file for each version with different ts files r
 
 Abstract Class
 -------------------
-Abstract classes are classes that contain one or more abstract methods. An abstract method is a method that is declared, but contains no implementation. Abstract classes may not be instantiated, and require subclasses to provide implementations for the abstract methods.
+Abstract classes are classes that contain one or more abstract methods. An abstract method is a method that is declared, but contains no implementation. 
+Abstract classes may not be instantiated, and require subclasses to provide implementations for the abstract methods.
 
 What's the difference between 'extends' and 'implements' in TypeScript
 --------------------------------------------------------------------------------------------
