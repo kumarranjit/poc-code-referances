@@ -79,6 +79,8 @@ JS  Question;
 Find duplicate number in array?
 
 
+
+
 ================================
 Angular interview Questions
 ===========================
@@ -104,3 +106,164 @@ Angular interview Questions
 2. Explain Ivy Renderer in Angular?
 3. What is Bazel and Closure Compiler in Angular6?
 4. Explain Service Worker in reference to Angular JS
+====================================================================
+1. out of given 3 arrays with n number of elements, find out the common element(s) for all 3 arrays.
+ 
+2. from a given array, make n elements rotate.
+eg. given Array:[21,54,11,35,4,18], index:3; output Array: [4,18,21,54,11,35]
+ 
+3. from an array, find out the elements, and their repetition and print as element=count.
+eg. 
+input Array: [2,1,3,4,6,5,4,7,5,6,8,2,3,6,2,6,4,4,7,3,4,5,6]
+output: 
+2=3
+1=1
+3=3
+4=5
+6=5
+5=5
+7=2
+8=1
+
+Q4. Given a sorted array with the duplicates, move all the distinct elements to the front. 
+arr[] = [1, 2, 2, 3, 4, 4, 4, 4, 5, 6, 6] 
+
+output: 
+arr[] = [1, 2, 3, 4, 5, 6, ..........]
+
+Q5. Given a sorted array and a key, find the two numbers which sum to the given key. 
+arr = [1, 3, 4, 5, 7, 8] 
+key = 10 
+
+output: 3 7 
+
+Q6. What will be the output?
+
+a()
+b()
+
+function a() {
+console.log(‘This is function a’);
+}
+
+var b = function() {
+console.log(‘This is function b’);
+}
+   
+
+7- Prime number program
+9-Q14. Print the right diagonal of the matrix
+Input:
+1    2    3    4 
+5    6    7    8
+9   10    11  12
+13  14    15  16
+
+Output:
+4  7  10  13
+
+
+function rightDiagonal(a,row,column){
+    for (let i=0;i<row;i++){
+        for(let j=0;j<column; j++){
+            if(i+j == column-1){
+                console.log(a[i][j]);
+            }
+        }
+    }
+}
+
+
+
+Q15. What will be the output?
+
+console.log(‘Good Morning’);
+
+setTimeout(function() {
+    console.log(“Hello, World!”);
+});
+
+console.log(‘Good Afternoon’);
+
+Ans
+Good Morning
+Good Afternoon
+Hello, World!
+
+
+Q16. What will be the output?
+
+a()
+b()
+
+function a() {
+    console.log(‘This is function a’);
+}
+
+var b = function() {
+    console.log(‘This is function b’);
+}
+
+Ans
+This is function a
+This is function b
+1> Write a function that returns date in format (HH:mm: ss) from the number of seconds from midnight.
+
+
+ 302 should return 00:05:02
+
+2> Given an array of integers return all pairs of the number whose sum is equal to given number k.
+
+    Input : [4,5,6,3], k = 7
+
+   Output = (4,3), (3,4)
+
+3> Write code to print  pattern
+
+
+    *   
+   * *
+  * * *
+ * * * *
+* * * * *
+
+the function should accept the number of lines as input and print the above pattern
+
+4> Create a Hapi Server and write an endpoint that returns current server time.
+
+
+5> What is Promise in Javascript? How to execute promise in parallel.
+
+6> Difference between async-await and promise
+
+
+
+1.	AoT compilation / TreeShake
+https://medium.com/spektrakel-blog/angular2-going-production-ready-with-ahead-of-time-compilation-aot-developer-experiences-aebaa0228909
+2.	ChangeDetectionStrategy.OnPush
+https://alligator.io/angular/change-detection-strategy/
+3.	TrackBy in ngFor
+https://netbasal.com/angular-2-improve-performance-with-trackby-cc147b5104e5
+4.	Loading module on-demand using loadChildren – Refer canLoad technique
+https://angular.io/guide/router#canload-guard-guarding-unauthorized-loading-of-feature-modules
+5.	WebWorkers for large operations and PWA – Progressive web apps 
+
+
+
+Am going to native for diwali
+
+I hereby wish to apply for leave on (Monday), (10th October, ’17) as I (Describer your reason for leave).
+
+I request you to kindly grant me (one day’s) casual leave for the same.
+
+Diwali is an an important festival for Hindu and it is also a important festival for me so please grant me leave for one day
+
+Dear Sir,
+
+I will be on leave dated 28/10/2011 as I will be going to home for Deewali & bhai dooj festival.
+
+Please grant me one day leave.
+
+As I am going to (place name) since we have an important festival next week (from (start date) to (end date).
+
+Kindly accept my request and grant me permission to take leave on those 3 days .
