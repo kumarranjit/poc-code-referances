@@ -1,0 +1,30 @@
+What is Node.js?
+========================
+=> Node.js can be defined as a dynamic, cross-platform and open-source JavaScript framework or 
+runtime environment that is built on the Google Chrome JavaScript V8 engine.
+
+=>Node.js, developed by Ryan Dahl in 2009, was initially implemented as a client-side scripting language. Nowadays, 
+it is used to execute JavaScript code and scripts that run server-side to create dynamic web pages.
+
+Node.js Features and Benefits
+=============================
+=> Faster code execution
+=> Highly scalable
+=> Non-blocking APIs
+=> No buffering
+
+With such wonderful features, Node.js is widely used for creating server-side and networking applications. 
+The following are the key areas where Node.js is widely used.
+
+I/O-bound applications
+Data streaming applications
+Data-intensive real-time applications (DIRT)
+JSON API-based applications
+Single-page applications
+
+What are modules in Node.js?
+===============================
+Modules in Node js are a way of encapsulating code in a separate logical unit. There are many readymade modules available in the market 
+which can be used within Node js
+
+Ex;  Express framework, Socket.io, Jade, MongoDB, Restify, Bluebird  
