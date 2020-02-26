@@ -45,16 +45,48 @@ git stash:
 
 
 
-Hi Murali,
+
+
+Hi Murali ,
 
 Iam working in IHG project since (05/06/2019) request you to release me from the project.
 
-I’m glad to have been a part of IHG in which I got a chance to work in the web support team, but now I’d like to work in another project 
-which has a lot of scope exclusively for development in (Angular 6+, React js) Business Intelligence & (Node js projects) the upcoming new technology,
+I’m glad to be a part of IHG in which I get a chance to work in the web support team, but now I’d like to work in another project,
+which has a lot of scope exclusively for development in Angular 6+, React js, Business Intelligence applications & the new technology (Node js) projects.
 
 As my interest lies in FullStack development project, I’d like to work in the development project where there is more scope for Angular 6+ with Node Js development 
 project. This would not only give me self-satisfaction but also help me to build a very strong career in TCS.
 
-Also, I travel almost for 2 hrs to from my home in (HOME AREA) to office in (OFFICE AREA),so I was thinking of getting into a project which is operated from facilities near to my home, which would help me in reducing the time I invest in traveling.
+Also, I travel almost for 2 hrs from my home (Ambattur) to office, so I would like to move into a project which is operated from facilities near to my home, 
+which would help me in reducing the travel time.
 
-I kindly request you to consider my request and do the needful at the earliest.
+Hence, I kindly request you to consider my request and do the needful at the earliest. Hoping to hear from you soon.
+
+
+
+
+
+This mail is a urgent and humble request for release me from my current project(IHG).
+
+I’m glad to be a part of IHG in which I get a chance to work in the web support team, now I’d like to relocate another location. As my newly wedded wife’s work location
+is Hyderabad, we are unable to lead a peaceful life apart from each other. This is badly affecting my work life balance that prevents me from giving my full potential 
+towards the current project. So I would like to move into Hyderabad location,which would help me to build a very strong career in TCS.
+
+Hence, I kindly request you to consider my request and Please do the needful asap. Awaiting a positive and immediate response. Thank you.
+
+
+This mail is a urgent and humble request for release me from my current project(IHG).
+
+I’m glad to be a part of IHG in which I got a chance to work in the web support team, now I’d like to relocate to Hyderbad. As you are aware i got married recently, Since my wife’s work location 
+is in Hyderabad, we are unable to lead a peaceful life apart from each other. This is badly affecting my work life balance that prevents me from giving my full potential
+ towards the current project. So I would like to move to Hyderabad location,which would help me to build a very strong career in TCS.
+
+Hence, I kindly request you to consider my request and Please do the needful asap. Awaiting a positive and immediate response. Thank you.
+
+
+
+ Balamurali R/CHN/TCS@TCS balamurali.r@tcs.com
+ g.muralidharan@tcsexch.com   g.muralidharan@tcs.com
+ Vigish V/CHN/TCS@TCS    vigish.kv@tcs.com
+ Rajasenthilkumar P/CHN/TCS@TCS
+ Haritha Reddy/CHN/TCS@TCS
