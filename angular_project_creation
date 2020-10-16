@@ -2,6 +2,11 @@ angular project creation step
 =====================================
 
 
+Cli Installation
+-----------------
+npm install --global @angular/cli@next
+
+
 
 Module generate with Routing
 ----------------------------
@@ -48,6 +53,22 @@ git stash:
 => git stash show -p n -will preview the git diff contents in the ‘n th’ stash.
 
 
+git pull --rebase origin master
+
+git reset --hard @{u}
+
+Squash Two Commits
+
+1. Git rebase -i <commit id> 
+2. Press s To edit the cli 
+3. Then pick first commit and squash second commit 
+4. Put s before the commit id 
+5. Esc to exit 
+6. Type :wq and enter to save 
+7. To Edit the commit message follow step 2 
+8. Make one message comment by putting # in prefix 
+9. The follow step 5 and 6 
+10. Then force Push your changes by Git push -f
 
 
 
@@ -88,17 +109,6 @@ is in Hyderabad, we are unable to lead a peaceful life apart from each other. Th
 Hence, I kindly request you to consider my request and Please do the needful asap. Awaiting a positive and immediate response. Thank you.
 
 
-Hi Murali... 
-I have not yet received any mail regarding my release in this project. Hence, need to discuss regarding my release process  kindly let me know ur free time to talk.
-
-Thanks Murali. But the release date seems to be short notice, kindly requesting you to atleast provide me some buffer time till this month end. Since this will enable me to find a new project with in this duration.
-
-Dear Raja Senthil,
-
-This is Ranjit, from IHG project. I have been informed that my release has been initiated and my last date would be 14' Aug by my team lead. But, I haven't received any mail from RMG team. Hence could you please help me regarding the release process and please do share ur contact no.
-
-Dear Dinesh,
-This Ranjit, from IHG project. I have been informed that my release has been initiated and my last date would be 14' Aug by my team lead. But, I haven't received any mail from RMG team nor have the allocation date been changed. Hence could you please help me regarding the same and please do share ur contact no.
 
  Balamurali R/CHN/TCS@TCS balamurali.r@tcs.com
  g.muralidharan@tcsexch.com   g.muralidharan@tcs.com
