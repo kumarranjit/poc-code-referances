@@ -249,21 +249,60 @@ https://angular.io/guide/router#canload-guard-guarding-unauthorized-loading-of-f
 5.	WebWorkers for large operations and PWA – Progressive web apps 
 
 
+1. Find Max number in given array 
+===================================
+var arr = [3, 4, 12, 1, 0, 5];
+let max = Math.max(...arr);
 
-Am going to native for diwali
+without build-in methods
+------------------------
+var arr = [3, 4, 12, 1, 0, 5];
+var max = arr[0];
+for (var k = 1; k < arr.length; k++) {
+  if (arr[k] > max) {
+    max = arr[k];
+  }
+}
+console.log("Max is: " + max);
 
-I hereby wish to apply for leave on (Monday), (10th October, ’17) as I (Describer your reason for leave).
+const array = [37,-5,-15,-37,5,15]
+const forLoopMinMax = () => {
+  let min = array[0], max = array[0]
+  for (let i = 1; i < array.length; i++) {
+    let value = array[i]
+    min = (value < min) ? value : min
+    max = (value > max) ? value : max
+  }
+  return [min, max]
+}
+console.log(forLoopMinMax());
 
-I request you to kindly grant me (one day’s) casual leave for the same.
+Another way
+---------------
 
-Diwali is an an important festival for Hindu and it is also a important festival for me so please grant me leave for one day
+var arr = [50,20,30,40, 10];
+arr.max = function() { return  Math.max.apply(Math, this); }; 
+arr.min = function() { return  Math.min.apply(Math, this); };
 
-Dear Sir,
+alert("min: " + arr.min() + " max: " + arr.max());
 
-I will be on leave dated 28/10/2011 as I will be going to home for Deewali & bhai dooj festival.
+const number = [80, 12, 67, 58, 30];
+number.sort((x, y) => x -  y);
+let min_val = number[0];
+let max_val = number[number.length -1]
 
-Please grant me one day leave.
-
-As I am going to (place name) since we have an important festival next week (from (start date) to (end date).
-
-Kindly accept my request and grant me permission to take leave on those 3 days .
+2. Find given array is sorted or not?
+=====================================
+without any build-in function
+-----------------------------
+function isSorted(array) {
+    for (let i = 0; i < array.length; i++) {
+      const current = array[i], next = array[i + 1];
+      if (current > next) {
+           return false; 
+        }
+    }
+    return true;
+  }
+const number = [80, 81, 67, 58, 30];
+console.log(isSorted(number));
