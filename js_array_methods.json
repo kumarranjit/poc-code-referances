@@ -692,6 +692,23 @@ setTimeout(() => {
 }
 createPerson({id : 6, name : "Ranjit", tags : "Node"}, getPerson);
 
+-------------------------------------------------------------------------------------------------------------------------------------------
+JavaScript recursive functions
+==============================
+
+=> A recursive function is a function that calls itself until it doesn’t.
+=> A recursive function always has a condition that stops the function from calling itself otherwise, it will call itself indefinitely.
+
+
+let countDown = function funName(fromNumber) {
+  console.log(fromNumber);
+  let nextNumber = fromNumber - 1;
+  if (nextNumber > 0) {
+    countDown(nextNumber);
+  }
+};
+countDown(20);
+
 ================================================================================================================================================
 // Promise
 
@@ -1055,7 +1072,7 @@ if(arrStr.includes(lion)){
    // process here
 }
 
-Check If an object is in an array.
+check if an object is in an array.
 ----------------------------------
 let bmw = {name: 'BMW' }, toyota = { name: 'Toyota'}, ford = {name: 'Ford'}
 
@@ -1063,6 +1080,47 @@ let cars = [ford, toyota];
 
 console.log(cars.includes(ford)); 
 console.log(cars.includes(bmw));
+
+Object.values()
+================
+
+The Object.values() accepts an object and returns its own enumerable property’s values as an array. See the following example:
+
+const person = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 25
+};
+const profile = Object.values(person);
+console.log(profile);
+O/P: [ 'John', 'Doe', 25 ]
+
+
+Array flatMap() method
+=====================
+
+Array.prototype.flat() => method that creates a new array with all the elements of the subarrays concatenated to it recursively 
+up to a specified depth.
+
+const numbers = [1, 2, [3, 4, 5]];
+const flatNumbers = numbers.flat();
+O/P: [1, 2, 3, 4, 5]
+
+The following example flats an array with two level depth:
+
+const numbers = [1, 2, [3, 4, 5, [6, 7]]];
+const flatNumbers = numbers.flat(2);
+console.log(flatNumbers);
+O/P: [1, 2, 3, 4, 5, 6, 7]
+
+const numbers = [1, 2, [3, 4, 5, [6, 7, [8, 9]]]];
+const flatNumbers = numbers.flat(Infinity);
+console.log(flatNumbers);
+
+If an array has empty slots, you can use the flat() method to remove the holes.
+const numbers = [1, 2, , 4, , 5];
+const sequence = numbers.flat();
+console.log(sequence); O/P: [ 1, 2, 4, 5 ]
 
 =================================================================================================================================================================
 Extended Parameter Handling
@@ -1077,7 +1135,7 @@ var other = [ 1, 2, ...params ] // [ 1, 2, "hello", true, 7 ]
 function f (x, y, ...a) {
     return (x + y) * a.length
 }
-f(1, 2, ...params) === 9
+if(1, 2, ...params) === 9
 
 var str = "foo"
 var chars = [ ...str ] // [ "f", "o", "o" ]
@@ -1247,7 +1305,20 @@ Object.keys({ b: 'one', a: 'two', c: 'three' }).length
 
 ---------------------------------------------------------------------------------------------------------------------------
 
-
+Fibonacci Series
+===================
+const fibonacci = function(n){
+let feb =[] ;
+let a=0, b=1, f=1;
+for(let i=0; i<=n; i++){
+f=a+b;
+feb.push(f);
+a=b;
+b=f;
+}
+console.log(feb);
+}
+fibonacci(10);
 
 
 RxJs Observable
