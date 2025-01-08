@@ -93,8 +93,8 @@ var javscriptPersons = persons.filter(personObj => personObj.tags.indexOf("javas
 
 3. Map
 
-Map like filter & foreach takes a callback and run it against every element on the array but whats makes it unique is it generate a new array based on your existing 
-array.
+Map like filter & foreach takes a callback and run it against every element on the array but whats makes it unique is it generate a 
+new array based on your existing array.
 
 var sample = [1, 2, 3]
 Ex-1 Single Dimension Array;
@@ -761,6 +761,20 @@ function createPerson(val) {
   Promise.all([Promise1, Promise2, Promise3,Promise4]).then(val => console.log(val));
 
   //Async / Await
+  function getPerson(){
+      let output='';
+      persons.forEach(element => {
+        output+=`<li>${element.name}</li>`
+      });
+      console.log(output);
+  }
+
+  function createPerson(val) {
+    setTimeout(() => {
+      persons.push(val);
+      }, 2000);
+    }
+
   async function asynFun(){
     await createPerson({id : 6, name : "Ranjit", tags : "Node"});
     getPerson();
